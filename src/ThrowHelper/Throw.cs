@@ -46,7 +46,7 @@ namespace ThrowHelper
         [DebuggerStepThrough]
         public static void IfArgumentNullOrEmpty(
             string argument,
-            string argumentName,
+            string argumentName = null,
             Func<Exception, Exception> modifier = null
             )
         {
