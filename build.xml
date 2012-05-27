@@ -11,7 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <SolutionFile Include="$(SourceDir)\ThrowHelper.sln" />
+    <SolutionFile Include="$(SourceDir)core\core.sln" />
   </ItemGroup>
 
   <Import Project="util\msbuild\MSBuild.Community.Tasks.Targets"/>
@@ -23,7 +23,7 @@
  
   <Target Name="GenerateAssemblyInfo">
     <AssemblyInfo CodeLanguage="CS"
-               OutputFile="$(SourceDir)\GlobalInfo.cs"
+               OutputFile="$(SourceDir)core\GlobalInfo.cs"
                AssemblyCompany="Elemar JR"
                AssemblyProduct="ThrowHelper"
                AssemblyTrademark=""
