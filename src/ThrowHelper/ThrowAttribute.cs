@@ -7,4 +7,9 @@ namespace ThrowHelper
     /// </summary>
     [AttributeUsage(AttributeTargets.Method)]
     public class ThrowAttribute : Attribute { }
+
+    [AttributeUsage(AttributeTargets.Parameter, AllowMultiple = false)]
+    public class NotNullAttribute : Attribute
+    {
+    }
 }

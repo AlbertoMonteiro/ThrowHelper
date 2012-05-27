@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{2208B0AB-880B-4519-BC44-34C361E49FBB}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{EFA9C8EA-21CE-4F1E-981F-6F135480CD3D}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ThrowHelper.Example</RootNamespace>
-    <AssemblyName>ThrowHelper.Example</AssemblyName>
+    <RootNamespace>ThrowHelper.Inject.Tests</RootNamespace>
+    <AssemblyName>ThrowHelper.Inject.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,10 +30,34 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentIL">
+      <HintPath>..\packages\FluentIL.1.0.1\lib\FluentIL.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentIL.Cecil">
+      <HintPath>..\packages\FluentIL.Cecil.0.1.1\lib\FluentIL.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\packages\Mono.Cecil.0.9.5.3\lib\net40\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb">
+      <HintPath>..\packages\Mono.Cecil.0.9.5.3\lib\net40\Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb">
+      <HintPath>..\packages\Mono.Cecil.0.9.5.3\lib\net40\Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks">
+      <HintPath>..\packages\Mono.Cecil.0.9.5.3\lib\net40\Mono.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.0.12054\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpTestsEx">
+      <HintPath>..\packages\SharpTestsEx.1.1.1\lib\SharpTestsEx.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpTestsEx.Mvc">
+      <HintPath>..\packages\SharpTestsEx.1.1.1\lib\SharpTestsEx.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,19 +68,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="TestClass.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="ThrowHelperIilInjectorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ThrowHelper.Inject.Code\ThrowHelper.Inject.Core.csproj">
+      <Project>{456EB492-69B1-43A7-A756-DB6947B317CC}</Project>
+      <Name>ThrowHelper.Inject.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ThrowHelper\ThrowHelper.csproj">
       <Project>{59686D3D-F9B7-4EB5-BDF8-4DBCAE8D5A86}</Project>
       <Name>ThrowHelper</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>"D:\Projetos\ThrowHelper\src\ThrowHelper.Inject\bin\Debug\ThrowHelper.Inject.exe" $(TargetPath)</PostBuildEvent>
-  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
