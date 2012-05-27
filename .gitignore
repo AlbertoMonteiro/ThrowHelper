@@ -10,8 +10,8 @@ build/
 TestResult.xml
 *.user
 *.pdb
-*/*.ncrunchsolution*
+*.ncrunchsolution*
 src/GlobalInfo.cs
-._*
+._* 
 *.ncrunchproject
 *.cache
