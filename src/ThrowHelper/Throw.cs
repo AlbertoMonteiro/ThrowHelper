@@ -27,5 +27,36 @@ namespace ThrowHelper
 
             throw e;
         }
+
+        [DebuggerStepThrough]
+        public static void IfArgumentNull(
+            object argument,
+            string argumentName = null,
+            Func<Exception, Exception> modifier = null
+            )
+        {
+            if (argument != null) return;
+
+            Now(
+                new ArgumentNullException(argumentName),
+                modifier
+                );
+        }
+
+        [DebuggerStepThrough]
+        public static void IfArgumentNullOrEmpty(
+            string argument,
+            string argumentName,
+            Func<Exception, Exception> modifier = null
+            )
+        {
+            IfArgumentNull(argument, argumentName, modifier);
+
+            if (!String.IsNullOrEmpty(argument)) return;
+
+            Now(new ArgumentException("Argument could not be empty", argumentName),
+                modifier);
+        }
+
     }
 }
