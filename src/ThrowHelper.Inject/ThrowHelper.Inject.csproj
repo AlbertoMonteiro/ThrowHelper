@@ -34,31 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FluentIL">
-      <HintPath>..\packages\FluentIL.1.0.1\lib\FluentIL.dll</HintPath>
-    </Reference>
-    <Reference Include="FluentIL.Cecil">
-      <HintPath>..\packages\FluentIL.Cecil.0.1.1\lib\FluentIL.Cecil.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Cecil">
-      <HintPath>..\packages\Mono.Cecil.0.9.5.3\lib\net40\Mono.Cecil.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Cecil.Mdb">
-      <HintPath>..\packages\Mono.Cecil.0.9.5.3\lib\net40\Mono.Cecil.Mdb.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Cecil.Pdb">
-      <HintPath>..\packages\Mono.Cecil.0.9.5.3\lib\net40\Mono.Cecil.Pdb.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Cecil.Rocks">
-      <HintPath>..\packages\Mono.Cecil.0.9.5.3\lib\net40\Mono.Cecil.Rocks.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -68,9 +45,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ThrowHelper\ThrowHelper.csproj">
-      <Project>{59686D3D-F9B7-4EB5-BDF8-4DBCAE8D5A86}</Project>
-      <Name>ThrowHelper</Name>
+    <ProjectReference Include="..\ThrowHelper.Inject.Code\ThrowHelper.Inject.Core.csproj">
+      <Project>{456EB492-69B1-43A7-A756-DB6947B317CC}</Project>
+      <Name>ThrowHelper.Inject.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
