@@ -67,7 +67,7 @@ namespace ThrowHelper.Inject.Tests
         }
 
         [TearDown]
-        public void DeletaArquivos()
+        public void Remove_Generated_Files()
         {
             if (!string.IsNullOrWhiteSpace(outputPath))
                 File.Delete(outputPath);
