@@ -55,7 +55,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>"D:\Projetos\ThrowHelper\src\ThrowHelper.Inject\bin\Debug\ThrowHelper.Inject.exe" $(TargetPath)</PostBuildEvent>
+    <PostBuildEvent>"$(SolutionDir)ThrowHelper.Inject\bin\Debug\ThrowHelper.Inject.exe" $(TargetPath)</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
