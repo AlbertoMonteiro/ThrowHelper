@@ -1,11 +1,7 @@
-#region
-
 using System.Collections.Generic;
 using System.Linq;
 using FluentIL.Cecil;
 using Mono.Cecil;
-
-#endregion
 
 namespace ThrowHelper.Inject
 {
@@ -20,8 +16,6 @@ namespace ThrowHelper.Inject
             this.assemblyPath = assemblyPath;
             this.outputPath = outputPath ?? assemblyPath;
         }
-
-        #region IILInjector Members
 
         public void Inject()
         {
@@ -64,8 +58,6 @@ namespace ThrowHelper.Inject
             methods = assembly.MainModule.Types.
                 SelectMany(type => type.Methods);
         }
-
-        #endregion
 
         private static bool HaveThrowAttribute(MethodDefinition method)
         {
