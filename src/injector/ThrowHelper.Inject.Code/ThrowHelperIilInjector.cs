@@ -47,10 +47,7 @@ namespace ThrowHelper.Inject
         public void Save()
         {
             if (!string.IsNullOrWhiteSpace(outputPath))
-            {
-                System.Diagnostics.Debugger.Launch();
                 assembly.Write(outputPath, new WriterParameters { WriteSymbols = true });
-            }
         }
 
         public IEnumerable<MethodDefinition> methods { get; set; }
