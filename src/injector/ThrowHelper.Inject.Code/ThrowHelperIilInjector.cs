@@ -23,7 +23,7 @@ namespace ThrowHelper.Inject
 
             foreach (var method in methods)
             {
-                var type = typeof (Throw);
+                var type = typeof(Throw);
                 var methodInfo = type.GetMethod("IfArgumentNull");
                 IEnumerable<ParameterDefinition> parameters;
                 if (HaveThrowAttribute(method))
@@ -47,14 +47,18 @@ namespace ThrowHelper.Inject
         public void Save()
         {
             if (!string.IsNullOrWhiteSpace(outputPath))
-                assembly.Write(outputPath);
+            {
+                System.Diagnostics.Debugger.Launch();
+                assembly.Write(outputPath, new WriterParameters { WriteSymbols = true });
+            }
         }
 
         public IEnumerable<MethodDefinition> methods { get; set; }
 
         public void LoadAssemblyAndGetMethods()
         {
-            assembly = AssemblyDefinition.ReadAssembly(assemblyPath);
+            var readerParameters = new ReaderParameters { ReadSymbols = true };
+            assembly = AssemblyDefinition.ReadAssembly(assemblyPath, readerParameters);
             methods = assembly.MainModule.Types.
                 SelectMany(type => type.Methods);
         }
